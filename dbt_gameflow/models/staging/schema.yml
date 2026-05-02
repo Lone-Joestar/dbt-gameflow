@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: stg_players
+    description: >
+      One row per player. PII removed. Derived churn and signup columns added.
+    columns:
+      - name: player_id
+        description: Primary key
+        data_tests:
+          - unique
+          - not_null
+
+      - name: subscription_tier
+        description: Player subscription level
+        data_tests:
+          - not_null
+          - accepted_values:
+             arguments:
+              values:
+                - free
+                - basic
+                - premium
+                - ultimate
+
+      - name: region
+        description: Player region
+        data_tests:
+          - not_null
+          - accepted_values:
+             arguments:
+              values:
+                - NA
+                - EU
+                - APAC
+                - LATAM
+                - MEA
+
+      - name: is_churned
+        description: True if player has left the platform
+        data_tests:
+          - not_null

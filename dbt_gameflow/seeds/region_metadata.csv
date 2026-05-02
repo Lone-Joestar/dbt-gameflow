@@ -1,0 +1,6 @@
+region,region_name,primary_currency,vat_rate,gdpr_applicable
+NA,North America,USD,0.0,false
+EU,Europe,EUR,0.2,true
+APAC,Asia Pacific,JPY,0.1,false
+LATAM,Latin America,BRL,0.12,false
+MEA,Middle East & Africa,USD,0.05,false

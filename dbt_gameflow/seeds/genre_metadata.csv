@@ -1,0 +1,13 @@
+genre,genre_category,is_competitive,typical_session_minutes,monetization_model
+Action,Core Gaming,true,45,premium
+RPG,Core Gaming,false,90,premium
+Strategy,Core Gaming,true,60,premium
+Simulation,Casual Gaming,false,30,freemium
+Sports,Core Gaming,true,40,premium
+Racing,Core Gaming,true,25,premium
+Adventure,Core Gaming,false,75,premium
+Casual,Casual Gaming,false,15,freemium
+Indie,Core Gaming,false,50,mixed
+Free to Play,Casual Gaming,true,20,freemium
+Massively Multiplayer,Core Gaming,true,120,freemium
+Early Access,Core Gaming,false,45,premium

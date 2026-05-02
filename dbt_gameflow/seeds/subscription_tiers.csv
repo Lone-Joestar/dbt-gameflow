@@ -1,0 +1,5 @@
+tier,monthly_price_usd,max_games,cloud_saves,priority_support,early_access
+free,0.00,5,false,false,false
+basic,4.99,20,true,false,false
+premium,9.99,100,true,false,true
+ultimate,19.99,999,true,true,true
