@@ -2,3 +2,12 @@
 target/
 dbt_packages/
 logs/
+*.duckdb
+data/raw/
+data/
+*.csv
+!seeds/*.csv
+target/
+dbt_packages/
+logs/
+EOF
