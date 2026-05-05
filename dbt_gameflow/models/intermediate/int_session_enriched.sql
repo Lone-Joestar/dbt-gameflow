@@ -26,10 +26,8 @@ final AS
 (SELECT 
 s.*,
 
-   
-    p.region,
+    p.region as player_home_region,
     p.subscription_tier,
-    g.app_id,
     g.game_name,
     g.genres
 
