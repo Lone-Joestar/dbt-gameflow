@@ -41,6 +41,8 @@ final as
     SELECT p.*,
     s.num_sessions,
     s.total_playtime,
+    s.last_seen_date,
+    
     s.avg_session_length,
     s.total_crashes,
     pu.total_purchases,
