@@ -24,8 +24,9 @@ final as (
         achievements                                        as achievement_count,
         avg_playtime_minutes,
         recommendations
-
+        
     from source
+    where game_name is not null
 
 )
 

@@ -40,3 +40,120 @@ models:
         description: True if player has left the platform
         data_tests:
           - not_null
+
+  - name: stg_events
+    description: one row per player event, 500k rows
+    columns:
+      - name: event_id
+        description: Primary key
+        data_tests:
+         - not_null
+         - unique
+      - name: player_id
+        description: Foreign key to stg_players
+        data_tests:
+         - not_null
+      
+      - name: event_type
+        description: type of event that happenned
+        data_tests:
+         - not_null
+         - accepted_values:
+            arguments:
+                values:
+                    - level_complete
+                    - achievement_unlocked
+                    - match_start
+                    - match_end
+                    - item_purchased
+                    - friend_added
+                    - login
+                    - logout 
+  - name: stg_sessions
+  
+    columns:
+      - name: session_id
+        description: Primary key
+        data_tests:
+         - unique
+         - not_null
+      - name: player_id
+        description: Foreign key to stg_players
+        data_tests:
+         - not_null
+      - name: app_id
+        description: Foreign key to stg_steam_games
+        data_tests:
+            - not_null
+
+      - name: session_type
+        description: Type of the session that occurred 
+        data_tests:
+         - accepted_values:
+            arguments:
+                values:
+                    - casual
+                    - normal
+                    - extended
+                    - marathon 
+
+  - name: stg_purchases
+  
+    columns:
+      - name: purchase_id
+        description: primary key
+        data_tests:
+         - not_null
+         - unique 
+      - name: player_id
+        description: foreign key to stg_players
+        data_tests:
+         - not_null
+
+      - name: payment_type
+        description: one row per purchase 
+        data_tests:
+         - not_null
+         - accepted_values:
+            arguments:
+                values:
+                    - credit_card
+                    - paypal
+                    - gift_card
+                    - crypto
+      - name: item_type
+        description : item bought
+        data_tests:
+         - not_null
+         - accepted_values:
+            arguments:
+                values:
+                    - skin
+                    - weapon
+                    - pass
+                    - currency
+                    - game 
+      - name: amount_usd
+        description: Purchase amount in USD
+        data_tests:
+         - not_null
+  - name: stg_steam_games
+    description: >
+        One row per steam game, 122k rows from kaggle dataset
+    columns:
+     - name: app_id
+       description: Primary Key, steam AppID
+       data_tests:
+        - unique
+        - not_null
+     - name: game_name
+       description: name of the game
+       data_tests:
+        - not_null
+     - name: price_usd
+       description: Base price in USD
+       data_tests: 
+        - not_null
+       
+
+    
